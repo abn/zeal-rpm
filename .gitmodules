@@ -1,0 +1,3 @@
+[submodule "zeal-packaging"]
+	path = zeal-packaging
+	url = https://github.com/zealdocs/zeal-packaging.git
