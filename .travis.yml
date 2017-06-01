@@ -8,8 +8,6 @@ env:
   matrix:
     - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=25 COPR_REPOSITORY=repository
     - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=25 COPR_REPOSITORY=zeal
-    - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=24 COPR_REPOSITORY=repository
-    - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=24 COPR_REPOSITORY=zeal
     - OS_TYPE=centos OS_DIST=epel OS_VERSION=7 COPR_REPOSITORY=repository
     - OS_TYPE=centos OS_DIST=epel OS_VERSION=7 COPR_REPOSITORY=zeal
     - OS_TYPE=centos OS_DIST=epel OS_VERSION=6 COPR_REPOSITORY=zeal
@@ -24,6 +22,6 @@ script:
 
 after_success:
   - pip install copr-cli simplejson
-  - openssl aes-256-cbc -K $encrypted_a3acc96797d5_key -iv $encrypted_a3acc96797d5_iv -in .copr.enc -out .copr -d
+  - openssl aes-256-cbc -K $encrypted_344d866bc444_key -iv $encrypted_344d866bc444_iv -in .copr.enc -out .copr -d
   - if [ ! -z "${TRAVIS_TAG}" ]; then copr-cli --config .copr build -r ${OS_DIST}-${OS_VERSION}-${OS_ARCH} ${COPR_REPOSITORY} *.src.rpm; fi
 
