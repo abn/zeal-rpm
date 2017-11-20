@@ -9,7 +9,6 @@ env:
     - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=26 COPR_REPOSITORY=zeal
     - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=27 COPR_REPOSITORY=zeal
     - OS_TYPE=centos OS_DIST=epel OS_VERSION=7 COPR_REPOSITORY=zeal
-    - OS_TYPE=centos OS_DIST=epel OS_VERSION=6 COPR_REPOSITORY=zeal
 
 services:
   - docker
